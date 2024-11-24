@@ -1,5 +1,5 @@
 import { serve } from '@hono/node-server';
-import logger from './utils/logger.js';
+import logger from '@/utils/logger';
 import { Hono } from 'hono';
 
 const app = new Hono();
