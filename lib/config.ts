@@ -1,6 +1,6 @@
 import randUserAgent from '@/utils/rand-user-agent';
 import 'dotenv/config';
-// import { ofetch } from 'ofetch';
+import { ofetch } from 'ofetch';
 
 let envs = process.env;
 
@@ -815,27 +815,29 @@ const calculateValue = () => {
 };
 calculateValue();
 
-// (async () => {
-//     if (envs.REMOTE_CONFIG) {
-//         const { default: logger } = await import('@/utils/logger');
-//         try {
-//             const data = await ofetch(envs.REMOTE_CONFIG, {
-//                 headers: {
-//                     Authorization: `Basic ${envs.REMOTE_CONFIG_AUTH}`,
-//                 },
-//             });
-//             if (data) {
-//                 envs = Object.assign(envs, data);
-//                 calculateValue();
-//                 logger.info('Remote config loaded.');
-//             } else {
-//                 logger.error('Remote config load failed.');
-//             }
-//         } catch (error) {
-//             logger.error('Remote config load failed.', error);
-//         }
-//     }
-// })();
+(async () => {
+    const { default: logger } = await import('@/utils/logger');
+    if (envs.REMOTE_CONFIG) {
+        try {
+            const data = await ofetch(envs.REMOTE_CONFIG, {
+                headers: {
+                    Authorization: `Basic ${envs.REMOTE_CONFIG_AUTH}`,
+                },
+            });
+            if (data) {
+                envs = Object.assign(envs, data);
+                calculateValue();
+                logger.info('Remote config loaded.');
+            } else {
+                logger.error('Remote config load failed.');
+            }
+        } catch (error) {
+            logger.error('Remote config load failed.', error);
+        }
+    }else{
+        logger.info('Remote config no need load');
+    }
+})();
 
 // @ts-expect-error value is set
 export const config: Config = value;
