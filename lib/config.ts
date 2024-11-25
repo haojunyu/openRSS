@@ -435,7 +435,7 @@ const calculateValue = () => {
         chromiumExecutablePath: envs.CHROMIUM_EXECUTABLE_PATH,
         // network
         connect: {
-            port: toInt(envs.PORT, 1200), // 监听端口
+            port: toInt(envs.PORT, 3000), // 监听端口
         },
         listenInaddrAny: toBoolean(envs.LISTEN_INADDR_ANY, true), // 是否允许公网连接，取值 0 1
         requestRetry: toInt(envs.REQUEST_RETRY, 2), // 请求失败重试次数
