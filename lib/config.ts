@@ -387,7 +387,7 @@ export type Config = {
 
 const value: Config | Record<string, any> = {};
 
-const TRUE_UA = 'openRSS/0.1 (+http://github.com/haojuny/openRSS; like FeedFetcher-Google)';
+const TRUE_UA = 'openRSS/0.1 (+http://github.com/haojunyu/openRSS; like FeedFetcher-Google)';
 
 const toBoolean = (value: string | undefined, defaultValue: boolean) => {
     if (value === undefined) {
@@ -816,8 +816,8 @@ const calculateValue = () => {
 calculateValue();
 
 (async () => {
-    const { default: logger } = await import('@/utils/logger');
     if (envs.REMOTE_CONFIG) {
+        const { default: logger } = await import('@/utils/logger');
         try {
             const data = await ofetch(envs.REMOTE_CONFIG, {
                 headers: {
@@ -834,8 +834,6 @@ calculateValue();
         } catch (error) {
             logger.error('Remote config load failed.', error);
         }
-    }else{
-        logger.info('Remote config no need load');
     }
 })();
 
