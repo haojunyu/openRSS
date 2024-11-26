@@ -18,7 +18,7 @@ import { trimTrailingSlash } from 'hono/trailing-slash';
 
 import logger from '@/utils/logger';
 
-// import { notFoundHandler, errorHandler } from '@/errors';
+import { notFoundHandler, errorHandler } from '@/errors';
 // import registry from '@/registry';
 // import api from '@/api';
 
@@ -29,7 +29,7 @@ process.on('uncaughtException', (e) => {
 const app = new Hono();
 
 app.use(trimTrailingSlash());
-app.use(compress());
+// app.use(compress());
 
 app.use(
     jsxRenderer(({ children }) => <>{children}</>, {
@@ -51,7 +51,7 @@ app.use(
 // app.route('/', registry);
 // app.route('/api', api);
 
-// app.notFound(notFoundHandler);
-// app.onError(errorHandler);
+app.notFound(notFoundHandler);
+app.onError(errorHandler);
 
 export default app;

@@ -50,6 +50,7 @@
         "@hono/node-server": "^1.13.7",
         "cross-env": "7.0.3",
         "@tonyrl/rand-user-agent": "2.0.81",
+        "@sentry/node": "7.119.1",
         "ofetch": "1.4.1",
         "dotenv": "16.4.5",
         "winston": "3.17.0",
