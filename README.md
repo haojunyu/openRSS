@@ -16,6 +16,28 @@ DONE:
 * 集成 vitest
 
 TODO:
-* error错误
-* 集成 app(index.ts)，启动一个场景
+* error错误   
+* 集成 app(index.ts)，启动一个场景  `pnpm vitest lib/errors/index.test.ts`
 * 完善中间件
+
+
+DONE:
+```bash
+pnpm vitest lib/registry.test.ts
+pnpm vitest lib/app.test.ts
+pnpm vitest lib/utils/wait.test.ts
+pnpm vitest lib/utils/helpers.test.ts
+```
+
+
+TODO:
+```bash
+pnpm vitest lib/utils/wechat-mp.test.ts
+pnpm vitest lib/pkg.test.ts
+pnpm vitest lib/utils/got.test.ts
+pnpm vitest lib/middleware/header.test.ts
+pnpm vitest lib/errors/index.test.ts
+```
+
+
+
