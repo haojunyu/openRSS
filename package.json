@@ -76,6 +76,8 @@
         "tldts": "6.1.62",
         "tosource": "2.0.0-alpha.3",
         "tough-cookie": "5.0.0",
+        "xxhash-wasm": "1.1.0",
+        "art-template": "4.13.2",
         "hono": "^4.6.11"
     },
     "devDependencies": {
