@@ -6,7 +6,6 @@ import cache from '@/utils/cache';
 import { fetchArticle } from '@/utils/wechat-mp';
 import ConfigNotFoundError from '@/errors/types/config-not-found';
 import InvalidParameterError from '@/errors/types/invalid-parameter';
-import logger from '@/utils/logger';
 
 let cacheIndex = 0;
 
@@ -64,7 +63,7 @@ async function handler(ctx) {
                     pubDate: new Date(`2019-3-1`).toUTCString(),
                     link: `https://github.com/DIYgod/RSSHub/issues/1`,
                     author: `DIYgod0`,
-                    category: ['Category3'],
+                    category: 'Category3',
                 },
             ];
 
@@ -402,7 +401,6 @@ async function handler(ctx) {
 
     if (ctx.req.param('id') === 'wechat-mp') {
         const params = ctx.req.param('params');
-        logger.info(`wechat-mpxx params: ${params}`);
         if (!params) {
             throw new InvalidParameterError('Invalid parameter');
         }

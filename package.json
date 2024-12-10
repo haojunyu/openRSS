@@ -30,6 +30,7 @@
         "lint": "eslint --cache .",
         "dev": "cross-env NODE_ENV=dev tsx watch --inspect --clear-screen=false lib/index.ts",
         "profiling": "cross-env NODE_ENV=production tsx --prof lib/index.ts",
+        "test:file": "vitest lib/utils/ofetch.test.ts",
         "test": "npm run format:check && npm run vitest:coverage",
         "vitest": "cross-env NODE_ENV=test vitest",
         "vitest:coverage": "cross-env NODE_ENV=test vitest --coverage.enabled --reporter=junit",

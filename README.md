@@ -34,7 +34,8 @@ pnpm vitest lib/pkg.test.ts
 
 TODO:
 ```bash
-
+# http://rsshub.test/headers 未生效
+pnpm vitest lib/utils/ofetch.test.ts
 
 pnpm vitest lib/utils/got.test.ts
 pnpm vitest lib/middleware/header.test.ts
@@ -57,3 +58,6 @@ lib//registry.test.ts
 lib//errors/index.test.ts
 lib//config.test.ts
 lib//setup.test.ts
+
+
+
